@@ -1,7 +1,7 @@
 part of 'product_card.dart';
 
-class _ProductCardItem extends StatelessWidget {
-  const _ProductCardItem({
+class _Item extends StatelessWidget {
+  const _Item({
     required this.data,
     required this.onPressed,
     Key? key,
@@ -91,8 +91,8 @@ class _ProductCardItem extends StatelessWidget {
   }
 }
 
-class _ProductCardItemLoading extends StatelessWidget {
-  const _ProductCardItemLoading({Key? key}) : super(key: key);
+class _ItemLoading extends StatelessWidget {
+  const _ItemLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

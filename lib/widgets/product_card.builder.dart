@@ -1,7 +1,7 @@
 part of 'product_card.dart';
 
-class _VerticalBuilder extends StatelessWidget {
-  const _VerticalBuilder({
+class _Builder extends StatelessWidget {
+  const _Builder({
     this.label,
     required this.data,
     required this.onPressed,
@@ -30,7 +30,7 @@ class _VerticalBuilder extends StatelessWidget {
           mainAxisSpacing: 4,
           crossAxisSpacing: 4,
           itemBuilder: (context, index) {
-            return _ProductCardItem(
+            return _Item(
               data: data[index],
               onPressed: () => onPressed(index, data[index]),
             );
@@ -80,7 +80,7 @@ class _LoadingBuilder extends StatelessWidget {
           mainAxisSpacing: 4,
           crossAxisSpacing: 4,
           itemBuilder: (context, index) {
-            return const _ProductCardItemLoading();
+            return const _ItemLoading();
           },
         ),
       ],

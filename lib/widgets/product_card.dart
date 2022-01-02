@@ -18,7 +18,7 @@ class ProductCardData {
   });
 }
 
-class ProductCard extends _ProductCard {
+class ProductCard extends _ProductCardGenerator {
   const ProductCard({
     required ProductCardData data,
     required Function() onPressed,
@@ -73,8 +73,8 @@ class ProductCard extends _ProductCard {
         );
 }
 
-class _ProductCard extends StatelessWidget {
-  const _ProductCard({
+class _ProductCardGenerator extends StatelessWidget {
+  const _ProductCardGenerator({
     required this.useBuilder,
     required this.isLoading,
     this.label,
@@ -133,7 +133,7 @@ class _ProductCard extends StatelessWidget {
                 label: label,
                 physics: physics,
               )
-            : _VerticalBuilder(
+            : _Builder(
                 data: builderData!,
                 label: label,
                 onPressed: builderOnPressed!,
@@ -141,7 +141,7 @@ class _ProductCard extends StatelessWidget {
                 physics: physics,
               )
         : (isLoading)
-            ? const _ProductCardItemLoading()
-            : _ProductCardItem(data: data!, onPressed: onPressed!);
+            ? const _ItemLoading()
+            : _Item(data: data!, onPressed: onPressed!);
   }
 }
