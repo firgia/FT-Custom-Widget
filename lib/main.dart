@@ -80,25 +80,24 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Product"),
-      ),
-      body: RefreshIndicator(
-        onRefresh: loadData,
-        child: CustomScrollView(
-          slivers: [
-            SliverList(
-              delegate: SliverChildListDelegate(
-                [
-                  // Build Design With BUILDER
-                  _buildDesignProductWithBuilder(),
+      body: SafeArea(
+        child: RefreshIndicator(
+          onRefresh: loadData,
+          child: CustomScrollView(
+            slivers: [
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                    // Build Design With BUILDER
+                    _buildDesignProductWithBuilder(),
 
-                  // Build Same Design Without BUILDER
-                  _buildDesignProductWithoutBuilder(),
-                ],
+                    // Build Same Design Without BUILDER
+                    _buildDesignProductWithoutBuilder(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
