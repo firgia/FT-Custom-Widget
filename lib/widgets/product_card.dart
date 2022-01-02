@@ -117,14 +117,13 @@ class _ProductCardGenerator extends StatelessWidget {
           "builderData And builderOnPressed is required",
         );
       }
-    } else {
-      if (!isLoading) {
-        assert(
-          data != null && onPressed != null,
-          "data And onPressed is required",
-        );
-      }
+    } else if (!isLoading) {
+      assert(
+        data != null && onPressed != null,
+        "data And onPressed is required",
+      );
     }
+
     return (useBuilder)
         ? (isLoading)
             ? _LoadingBuilder(
